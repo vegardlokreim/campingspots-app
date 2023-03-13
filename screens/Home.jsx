@@ -173,6 +173,92 @@ const Home = () => {
               ))}
           </ScrollView>
         </View>
+        {/* Fourth Row - Favorite locatons */}
+        <View className="mx-4 mt-4 flex-row justify-between">
+          {/* Left side */}
+          <View className="flex-row items-center space-x-2">
+            <MapIcon color="#EC924F" size={18} />
+            <Text className="font-semibold text-gray-400 text-md">
+              Favoritter
+            </Text>
+          </View>
+          {/* Right side */}
+          <View className="flex-row items-center space-x-2">
+            <Text className="font-semibold text-gray-400 text-md">
+              Se alle
+            </Text>
+            <ChevronRightIcon
+              color="rgb(156,163,175)"
+              size={12}
+            />
+          </View>
+        </View>
+
+        {/* Fifth row - Favorite location cards */}
+        <View className="mx-4 mt-4">
+          <ScrollView
+            horizontal
+            snapToInterval={interval}
+            decelerationRate="fast"
+            showsHorizontalScrollIndicator={false}
+            className="space-x-5"
+          >
+            {locations &&
+              locations.map((loc) => (
+                <View key={loc._id}>
+                  <LocationCard
+                    src={loc.url}
+                    title={loc.title}
+                    area="Bergen, Vestaland"
+                    id={loc._id}
+                  />
+                </View>
+              ))}
+          </ScrollView>
+        </View>
+        {/* Fourth Row - Favorite locatons */}
+        <View className="mx-4 mt-4 flex-row justify-between">
+          {/* Left side */}
+          <View className="flex-row items-center space-x-2">
+            <MapIcon color="#EC924F" size={18} />
+            <Text className="font-semibold text-gray-400 text-md">
+              Favoritter
+            </Text>
+          </View>
+          {/* Right side */}
+          <View className="flex-row items-center space-x-2">
+            <Text className="font-semibold text-gray-400 text-md">
+              Se alle
+            </Text>
+            <ChevronRightIcon
+              color="rgb(156,163,175)"
+              size={12}
+            />
+          </View>
+        </View>
+
+        {/* Fifth row - Favorite location cards */}
+        <View className="mx-4 mt-4">
+          <ScrollView
+            horizontal
+            snapToInterval={interval}
+            decelerationRate="fast"
+            showsHorizontalScrollIndicator={false}
+            className="space-x-5"
+          >
+            {locations &&
+              locations.map((loc) => (
+                <View key={loc._id}>
+                  <LocationCard
+                    src={loc.url}
+                    title={loc.title}
+                    area="Bergen, Vestaland"
+                    id={loc._id}
+                  />
+                </View>
+              ))}
+          </ScrollView>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );

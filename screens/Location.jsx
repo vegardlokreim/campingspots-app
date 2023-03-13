@@ -22,6 +22,7 @@ import {
   ArrowSmallLeftIcon,
   BellAlertIcon,
   MapIcon,
+  HeartIcon,
 } from "react-native-heroicons/outline";
 import MapView, { Marker } from "react-native-maps";
 
@@ -29,6 +30,11 @@ const Location = () => {
   const navigation = useNavigation();
   const id = useRoute().params.id;
   const [location, setLocation] = useState(null);
+  const [liked, setLiked] = useState(false);
+
+  const handleLikePress = () => {
+    setLiked(!liked);
+  };
 
   useEffect(() => {
     const loc = axios
@@ -61,7 +67,17 @@ const Location = () => {
         <Text className="flex-1 text-center font-medium text-2xl text-gray-700">
           {location.title}
         </Text>
-        <BellAlertIcon color="#497F78" size={30} />
+        <TouchableOpacity onPress={handleLikePress}>
+          {liked ? (
+            <HeartIcon
+              size={30}
+              fill="#F87171"
+              color="#F87171"
+            />
+          ) : (
+            <HeartIcon color="#497F78" size={30} />
+          )}
+        </TouchableOpacity>
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         {/* Image row */}

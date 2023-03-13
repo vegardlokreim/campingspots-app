@@ -13,8 +13,10 @@ import {
   MagnifyingGlassIcon,
   Cog6ToothIcon,
   UserCircleIcon,
+  PlusIcon,
   HeartIcon
 } from "react-native-heroicons/outline";
+import AddLocation from './screens/AddLocation';
 
 
 export default function App() {
@@ -38,6 +40,13 @@ export default function App() {
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <MagnifyingGlassIcon color={color} />
+          ),
+
+        }} />
+        <Tab.Screen name="Legg til" component={AddLocation} options={{
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <PlusIcon color={color} />
           ),
 
         }} />
