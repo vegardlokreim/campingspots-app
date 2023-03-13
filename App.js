@@ -1,22 +1,17 @@
-import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-
-import Home from './screens/Home';
-import Location from './screens/Location';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Stack from './Stack';
 import Browse from './screens/Browse';
 
 import {
   HomeIcon,
   MagnifyingGlassIcon,
-  Cog6ToothIcon,
   UserCircleIcon,
   PlusIcon,
   HeartIcon
 } from "react-native-heroicons/outline";
-import AddLocation from './screens/AddLocation';
+
+import AddStack from './AddStack';
 
 
 export default function App() {
@@ -43,7 +38,7 @@ export default function App() {
           ),
 
         }} />
-        <Tab.Screen name="Legg til" component={AddLocation} options={{
+        <Tab.Screen name="Legg til" component={AddStack} options={{
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <PlusIcon color={color} />
